@@ -12,8 +12,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 // Connect DB, from the mongoose package and vars in .env
+let uri =
+  "mongodb://heroku_cp58m4qq:bliv9d1u69dpeultbu52n3vmsj@ds259878.mlab.com:59878/heroku_cp58m4qq"; // heroku
 mongoose
-  .connect(process.env.MONGODB_URL || process.env.MONGO_URI, {
+  .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
