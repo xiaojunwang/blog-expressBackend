@@ -176,5 +176,5 @@ exports.findPeople = (req, res) => {
     }
 
     res.json(users);
-  }).select("name");
+  }).select("name created");
 };
