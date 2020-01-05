@@ -60,7 +60,7 @@ app.use(function(err, req, res, next) {
 });
 
 // from the dotenv package
-const port = process.env.port || 8080;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`A Node JS API is listening on port: ${port}`);
 });
