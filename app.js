@@ -13,9 +13,12 @@ dotenv.config();
 
 // Connect DB, from the mongoose package and vars in .env
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect(process.env.MONGODB_URL || process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    family: 4 // Use IPv4, skip trying IPv6
   })
   .then(() => console.log("DB Connected"));
 
